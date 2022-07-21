@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { notification } from "antd";
-import axios from "axios";
 
 export const useForm = (validate: any) => {
   const [values, setValues] = useState({});
@@ -16,18 +16,13 @@ export const useForm = (validate: any) => {
 
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setErrors(validate(values));
-    // Your url for API
-    const url = "";
-    if (Object.keys(values).length === 3) {
-      axios
-        .post(url, {
-          ...values,
-        })
-        .then(() => {
-          setShouldSubmit(true);
-        });
-    }
+    console.log(values)
+    emailjs.send('service_ufwfyab', 'template_vndg1dc', values, '8iq8GyJ8OMpEV6t2u')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
   };
 
   useEffect(() => {
@@ -45,6 +40,8 @@ export const useForm = (validate: any) => {
     }));
     setErrors((errors) => ({ ...errors, [event.target.name]: "" }));
   };
+
+  console.log(values)
 
   return {
     handleChange,

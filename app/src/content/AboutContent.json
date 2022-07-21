@@ -1,0 +1,21 @@
+{
+  "title": "Light, Fast & Responsive",
+  "text": "We Deliver Quality That Your Customers Will Love",
+  "section": [
+    {
+      "title": "Startups",
+      "content": "You have questions, we have answers. Our Team will help you rise up to meet your first milestones",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Small Businesses",
+      "content": "Grow and conquer. Let us help you scale your product past version 1.0",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Enterprise",
+      "content": "Execute and deliver. We support consistent and continuous product innovation.",
+      "icon": "notes.svg"
+    }
+  ]
+}
